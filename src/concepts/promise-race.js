@@ -9,29 +9,27 @@ export const promiseRaceComponent = (element) => {
         element.innerHTML = value;
     };
 
-    Promise.race([
-        slowPromise(),
-        midiumPromise(),
-        midiumPromise(),
-        fastPromise(),
-        midiumPromise(),
-    ]).then(renderValue);
-    console.log(renderValue);
+    Promise.race([slowPromise(), mediumPromise(), fastPromise()]).then(
+        renderValue
+    );
 };
 
-const slowPromise = (value) =>
+const slowPromise = () =>
     new Promise((resolve) => {
-        setTimeout(resolve, 2000, "slow promise");
+        setTimeout(() => {
+            resolve("slow promise resolved!");
+        }, 2000);
+    });
+const mediumPromise = () =>
+    new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("medium promise resolved!");
+        }, 1500);
     });
 
-const midiumPromise = (value) => {
+const fastPromise = () =>
     new Promise((resolve) => {
-        setTimeout(resolve, 1500, "medium promise");
+        setTimeout(() => {
+            resolve("fast promise resolved!");
+        }, 1000);
     });
-};
-
-const fastPromise = (value) => {
-    new Promise((resolve) => {
-        setTimeout(resolve, 1500, "fast promise");
-    });
-};
