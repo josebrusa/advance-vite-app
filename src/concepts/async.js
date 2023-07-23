@@ -5,9 +5,22 @@ import { heroes } from "../data/heroes";
  * @param {HTMLDivElement} element
  */
 
-export const asyncComponent = (element) => {};
+export const asyncComponent = (element) => {
+    const id1 = "5d86371fd55e2e2a30fe1cc3";
+    console.log("Inicio del componente");
+    findHero(id1)
+        .then((name) => (element.innerHTML = name))
+        .catch((err) => (element.innerHTML = err));
+};
 
-const findHero = (id) => {
+/**
+ *
+ * @param {String} id
+ * @returns {Promise<String>}
+ */
+const findHero = async (id) => {
     const hero = heroes.find((hero) => hero.id === id);
-    return hero;
+    if (!hero) throw `No se encontro Heroe con el ID ${id}`;
+
+    return hero.name;
 };
