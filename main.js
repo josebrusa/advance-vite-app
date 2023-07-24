@@ -6,7 +6,8 @@ import viteLogo from "/vite.svg";
 // import { promiseComponent } from "./src/concepts/promises";
 // import { promiseRaceComponent } from "./src/concepts/promise-race";
 // import { asyncComponent } from "./src/concepts/async";
-import { asyncAwaitComponent } from "./src/concepts/asyncAwait";
+// import { asyncAwaitComponent } from "./src/concepts/asyncAwait";
+import { asyncAwaitNoSecuencial } from "./src/concepts/asyncAwaitNoSecuencial.js";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -29,4 +30,5 @@ const element = document.querySelector(".card");
 // promiseComponent(element);
 // promiseRaceComponent(element);
 // asyncComponent(element);
-asyncAwaitComponent(element);
+// asyncAwaitComponent(element);
+asyncAwaitNoSecuencial(element);
