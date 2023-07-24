@@ -8,7 +8,8 @@ import viteLogo from "/vite.svg";
 // import { asyncComponent } from "./src/concepts/async";
 // import { asyncAwaitComponent } from "./src/concepts/asyncAwait";
 // import { asyncAwaitNoSecuencial } from "./src/concepts/asyncAwaitNoSecuencial.js";
-import { forAwaitComponent } from "./src/concepts/for-await";
+// import { forAwaitComponent } from "./src/concepts/for-await";
+import { generatorFunctionComponents } from "./src/concepts/generators";
 
 document.querySelector("#app").innerHTML = `
   <div>
@@ -33,4 +34,5 @@ const element = document.querySelector(".card");
 // asyncComponent(element);
 // asyncAwaitComponent(element);
 // asyncAwaitNoSecuencial(element);
-forAwaitComponent(element);
+// forAwaitComponent(element);
+generatorFunctionComponents(element);
